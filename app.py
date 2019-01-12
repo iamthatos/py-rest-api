@@ -11,11 +11,11 @@ from resources.store import Store, StoreList
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL', 'sqlite:///data.db') 
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Turn of flask tracker because sqlalchemy has its own
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Turn of flask tracker because sqlalchemy has its own.
 app.secret_key = 'thatosbk'
 api = Api(app)
 
-jwt = JWT(app, authenticate, identity) # /auth
+jwt = JWT(app, authenticate, identity)
 
 api.add_resource(Store, '/stores/<string:name>')
 api.add_resource(StoreList, '/stores')
