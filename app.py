@@ -13,10 +13,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATION'] = False # Turn of flask tracker beca
 app.secret_key = 'thatosbk'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 jwt = JWT(app, authenticate, identity) # /auth
 
 api.add_resource(Store, '/stores/<string:name>')

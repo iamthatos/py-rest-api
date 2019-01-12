@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-pip install Flast
+pip install Flask
 python app.py
 ```
 
